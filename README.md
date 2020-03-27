@@ -2,7 +2,7 @@
 
 ## Usage
 
-reorganize.py [Path] [Exclude]
+`reorganize.py [Path] [Exclude]`
 
 ## Contribute
 
