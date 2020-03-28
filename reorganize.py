@@ -3,6 +3,8 @@ import os
 import subprocess
 import shutil
 
+#Example path input: /Users/anurag/Downloads/test
+
 def get_arg(index):
     try:
         sys.argv[index]
@@ -24,12 +26,15 @@ def cleanup():
                 shutil.rmtree(dr)
             except FileNotFoundError:
                 pass
+    
 
 if(get_arg(1) == ''):
     print("No path provided.\nUsage: reorganize.py [Path] [-Exclude]")
 else:
+    if not os.path.exists(sys.argv[1]):
+        print("Invalid Path")
+        exit()
     reorg_dir = sys.argv[1]
-    #"/Users/anurag/Downloads/test"
 
 
 
@@ -60,7 +65,9 @@ for root, dirs, files in os.walk(reorg_dir):
             newfile = new_dir+"/"+name
             shutil.move(subject, newfile)
 
+
 if remove_emptyfolders != True:
     cleanup()
-    print("\nCompleted")
+
+print("\nCompleted")    
 
