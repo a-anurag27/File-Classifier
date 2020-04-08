@@ -6,5 +6,6 @@
 
 ## Contribute
 
-- Add Path Validity
+- Add Copy Mode
+- Playground Integrations
 - Add a Generated Report

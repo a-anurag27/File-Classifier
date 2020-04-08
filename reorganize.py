@@ -64,9 +64,9 @@ for root, dirs, files in os.walk(reorg_dir):
                 n = n+1
             newfile = new_dir+"/"+name
             shutil.move(subject, newfile)
+            #shutil.copy(subject, newfile)
 
-
-if remove_emptyfolders != True:
+if remove_emptyfolders != False:
     cleanup()
 
 print("\nCompleted")    
